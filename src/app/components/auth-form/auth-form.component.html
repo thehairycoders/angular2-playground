@@ -1,0 +1,15 @@
+<md-card>
+    <md-card-title>{{formTitle}}</md-card-title>
+    <md-card-content>
+        <form novalidate [formGroup]="form" fxLayout="column" fxLayoutAlign="space-between" (submit)="submit()">
+            <md-input placeholder="Email" formControlName="email"></md-input>
+            <md-input placeholder="Password" type="password" formControlName="password"></md-input>
+        </form>
+    </md-card-content>
+    <md-card-actions>
+        <button md-raised-button color="primary">
+          GO
+          <md-icon>navigate_next</md-icon>
+        </button>
+    </md-card-actions>
+</md-card>
