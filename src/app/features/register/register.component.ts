@@ -13,7 +13,6 @@ import { AuthState } from '../../store/reducers/auth';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
  
   loading: boolean = false;
 

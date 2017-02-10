@@ -4,20 +4,24 @@ import { StoreModule, combineReducers } from '@ngrx/store';
 import { storeLogger } from 'ngrx-store-logger';
 import { EffectsModule } from '@ngrx/effects';
 
-import { AuthActions } from './actions';
-import { AuthEffects } from './effects';
+import { AuthActions, NotifyActions } from './actions';
+import { AuthEffects, NotifyEffects } from './effects';
 import * as fromAuth from './reducers/auth';
+import * as fromNotify from './reducers/notify';
 
 export interface AppState {
-  authState: fromAuth.AuthState;
+  authState: fromAuth.AuthState,
+  notifyState: fromNotify.NotifyState
 };
 
 export const actions = [
-  AuthActions
+  AuthActions,
+  NotifyActions
 ];
 
 export const composeStore = compose(storeLogger(), combineReducers)({
-  authState: fromAuth.default
+  authState: fromAuth.default,
+  notifyState: fromNotify.default
 });
 
 export function reducer(state: any, action: any) {
@@ -27,7 +31,8 @@ export function reducer(state: any, action: any) {
 @NgModule({
   imports: [
     StoreModule.provideStore(reducer),
-    EffectsModule.run(AuthEffects)
+    EffectsModule.run(AuthEffects),
+    EffectsModule.run(NotifyEffects)
   ],
   declarations: [],
   exports: [],

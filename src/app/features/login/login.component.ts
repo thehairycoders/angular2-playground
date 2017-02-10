@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
 
   }
 
-  login(authCredentials) {
+  login(authCredentials: IAuthCredentials): void {
 
     this.store.dispatch(this.authActions.loginUser(authCredentials));
 
