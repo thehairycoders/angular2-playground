@@ -1,8 +1,8 @@
 <div fxLayout="row" fxLayoutAlign="space-around stretch" class="full-screen">
   <div class="auth-form">
-    <app-auth-form [formTitle]="Login" (formSubmitEvent)="login()"></app-auth-form>
+    <app-auth-form formTitle="Login" (formSubmitEvent)="login()"></app-auth-form>
     <div fxLayout="column" fxLayoutAlign="space-between">
-      <a md-button routerLink="../register" color="primary">Register?</a>
+      <a md-button routerLink="../register" color="primary">Sign up for an account</a>
     </div>
   </div>
 </div>

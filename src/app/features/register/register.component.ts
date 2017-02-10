@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
 
   }
 
-  register(authCredentials) {
+  register(authCredentials: IAuthCredentials): void {
 
     this.store.dispatch(this.authActions.registerUser(authCredentials));
 
