@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() { 
 
-    return this.store.select(store => store.authState).subscribe(authState => {
+    this.store.select(store => store.authState).subscribe(authState => {
       this.loggedIn = authState.loginStatus === LoginStatus.loggedIn;      
     });
 

@@ -11,9 +11,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedStoreModule } from './store';
 import { AppComponent } from './app.component';
 import { LoginComponent, RegisterComponent, PlayerComponent } from './features';
-import { AuthService, NotifyService } from './services';
+import { AuthService, NotifyService, PlayerService } from './services';
 import { AuthFormComponent, NotifyComponent, ToolbarComponent } from './components';
 import { AppRoutingModule } from './app.routing';
+import { PlayerFormComponent } from './features/player/components/player-form/player-form.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { AppRoutingModule } from './app.routing';
     PlayerComponent,
     AuthFormComponent,
     NotifyComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    PlayerFormComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { AppRoutingModule } from './app.routing';
   providers: [
     StoreModule,
     AuthService,
-    NotifyService
+    NotifyService,
+    PlayerService
   ],
   bootstrap: [AppComponent]
 })
