@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
 
   private redirectIfLoggedIn(state: AuthState): void {
 
-    if (state.loginStatus === LoginStatus.loggedIn) this.router.navigate(['player']);
+    if (state.loginStatus === LoginStatus.loggedIn) this.router.navigate(['player/details']);
 
   }
 

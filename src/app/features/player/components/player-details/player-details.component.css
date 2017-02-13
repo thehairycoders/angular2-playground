@@ -1,0 +1,27 @@
+.error {
+    color: #c10924
+}
+
+.coloured-buttons {
+    margin: 16px 0 0 0;
+}
+
+.select-input-container {
+    margin: 16px 0;
+}
+
+.placeholder .player-view__title, .placeholder .player-view__item  {
+    animation: none;       
+    position: relative;    
+    min-height: 1.5em;
+}
+
+.placeholder .player-view__title:before, .placeholder .player-view__item:before  {
+    position: absolute;
+    top: 15%;
+    width: 50%;
+    height: 70%;
+    background: #e2e2e2;
+    border-radius: 5px;
+    content: '';
+}

@@ -1,0 +1,27 @@
+<md-card [ngClass]="{placeholder: playerExists && !player}" *ngIf="playerExists">
+    <md-card-title class="player-view__title">{{player?.firstName}} {{player?.surname}}</md-card-title>
+    <md-card-content fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="16px">
+        <md-list>
+            <md-list-item class="player-view__item">{{player?.phoneNumber}}</md-list-item>
+            <md-list-item class="player-view__item">Age {{getAge(player?.dateOfBirth)}}</md-list-item>
+            <md-list-item class="player-view__item">{{player?.preferredFoot}} footed</md-list-item>
+            <md-list-item class="player-view__item">{{player?.preferredPosition}}</md-list-item>
+        </md-list>
+    </md-card-content>
+    <md-card-actions class="coloured-buttons">
+        <a md-mini-fab routerLink="../edit" [disabled]="!player">
+            <md-icon>mode_edit</md-icon>
+        </a>
+    </md-card-actions>
+</md-card>
+<md-card *ngIf="!playerExists">
+    <md-card-title>Who's this?</md-card-title>
+    <md-card-content fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="16px">
+        Tell us about yourself
+    </md-card-content>
+    <md-card-actions class="coloured-buttons">
+        <a md-raised-button color="primary" routerLink="../edit">
+            ADD INFO
+        </a>
+    </md-card-actions>
+</md-card>

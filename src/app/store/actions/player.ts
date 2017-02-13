@@ -53,4 +53,11 @@ export class PlayerActions {
     };
   }
 
+  static SET_PLAYER_STATUS_IDLE = "SET_PLAYER_STATUS_IDLE";
+  setPLayerStatusIdle(): Action {
+    return {
+      type: PlayerActions.SET_PLAYER_STATUS_IDLE
+    };
+  }
+
 }

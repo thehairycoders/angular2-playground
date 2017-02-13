@@ -1,0 +1,4 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <app-player-form *ngIf="playerFetched" (formSubmitEvent)="updatePlayer($event)" [player]="player"></app-player-form>
+</div>
+<md-progress-spinner *ngIf="loading" mode="indeterminate" class="loading"></md-progress-spinner>

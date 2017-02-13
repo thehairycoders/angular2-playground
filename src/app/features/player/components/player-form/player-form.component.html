@@ -23,23 +23,24 @@
                 </md-input-container>
                 <div fxLayout="column" fxLayoutAlign="start stretch">
                     <md-select placeholder="Preferred foot" formControlName="preferredFoot" class="select-input-container">
-                        <md-option value="0">Left</md-option>
-                        <md-option value="1">Right</md-option>
-                        <md-option value="2">Both</md-option>
+                        <md-option value="Left">Left</md-option>
+                        <md-option value="Right">Right</md-option>
+                        <md-option value="Both">Both</md-option>
                     </md-select>
                 </div>
                 <div fxLayout="column" fxLayoutAlign="start stretch">
                     <md-select placeholder="Preferred position" formControlName="preferredPosition" class="select-input-container">
-                        <md-option value="0">Goalkeeper</md-option>
-                        <md-option value="1">Defender</md-option>
-                        <md-option value="2">Midfielder</md-option>
-                        <md-option value="3">Striker</md-option>
-                        <md-option value="5">All rounder</md-option>
-                        <md-option value="4">Benchwarmer</md-option>
+                        <md-option value="Goalkeeper">Goalkeeper</md-option>
+                        <md-option value="Defender">Defender</md-option>
+                        <md-option value="Midfielder">Midfielder</md-option>
+                        <md-option value="Striker">Striker</md-option>
+                        <md-option value="All rounder">All rounder</md-option>
+                        <md-option value="Benchwarmer">Benchwarmer</md-option>
                     </md-select>
                 </div>
             </md-card-content>
             <md-card-actions class="coloured-buttons">
+                <a md-raised-button color="primary" routerLink="../details" >CANCEL</a>
                 <button md-raised-button color="primary" type="submit">UPDATE</button>
             </md-card-actions>
         </md-card>

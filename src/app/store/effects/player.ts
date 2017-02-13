@@ -48,4 +48,9 @@ export class PlayerEffects {
             .catch(error => Observable.of({type: PlayerActions.UPDATE_PLAYER_FAILURE}))
         );
 
+        
+    @Effect() setPlayerStateToIdle$ = this.actions$
+        .ofType(PlayerActions.UPDATE_PLAYER_SUCCESS, PlayerActions.UPDATE_PLAYER_FAILURE, PlayerActions.GET_PLAYER_FAILURE, PlayerActions.GET_PLAYER_SUCCESS)
+        .switchMap(() => Observable.of({type: PlayerActions.SET_PLAYER_STATUS_IDLE}));
+
 }

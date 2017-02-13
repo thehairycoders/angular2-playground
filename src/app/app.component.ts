@@ -11,7 +11,7 @@ import { LoginStatus } from './models';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit { 
+export class AppComponent implements OnInit {
 
   loggedIn: boolean = false;
 
@@ -20,19 +20,23 @@ export class AppComponent implements OnInit {
     private authActions: AuthActions,
     private router: Router) { }
 
-  ngOnInit() { 
+  ngOnInit() {
 
     this.store.select(store => store.authState).subscribe(authState => {
-      this.loggedIn = authState.loginStatus === LoginStatus.loggedIn;      
+      this.loggedIn = authState.loginStatus === LoginStatus.loggedIn;
+    });
+
+    this.router.events.subscribe(val => {
+      console.log(val);
     });
 
   }
 
-  logout() {    
+  logout() {
 
     this.store.dispatch(this.authActions.logOutUser());
     this.router.navigate(['login']);
-    
+
   }
 
 }

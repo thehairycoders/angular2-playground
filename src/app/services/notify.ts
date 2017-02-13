@@ -5,7 +5,7 @@ import { AngularFire, FirebaseAuthState, FirebaseAuth} from 'angularfire2';
 import { Observable } from 'rxjs';
 
 import { IAuthCredentials } from '../models';
-import { AuthActions } from '../store/actions';
+import { AuthActions, PlayerActions } from '../store/actions';
 import * as RootStore from '../store';
 
 @Injectable()
@@ -22,6 +22,10 @@ export class NotifyService {
         return message ? message : "Failed to register";
       case AuthActions.REGISTER_SUCCESS:
         return message ? message: "Success!  Welcome to the Angular2 Playground";
+      case PlayerActions.UPDATE_PLAYER_SUCCESS:
+        return message ? message: "Success!";
+      case PlayerActions.UPDATE_PLAYER_FAILURE:
+        return message ? message: "Failed to update";
     }
 
   }
