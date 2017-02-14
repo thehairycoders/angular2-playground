@@ -10,29 +10,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { SharedStoreModule } from './store';
 import { AppComponent } from './app.component';
-import { LoginComponent, RegisterComponent, PlayerComponent } from './features';
 import { AuthService, NotifyService, PlayerService, UtilsService } from './services';
-import { AuthFormComponent, NotifyComponent, ToolbarComponent } from './components';
+import { NotifyComponent, ToolbarComponent } from './components';
 import { AppRoutingModule } from './app.routing';
-import { PlayerFormComponent } from './features/player/components/player-form/player-form.component';
-import { ViewPlayerComponent } from './features/player/view-player/view-player.component';
-import { EditPlayerComponent } from './features/player/edit-player/edit-player.component';
-import { PlayerDetailsComponent } from './features/player/components/player-details/player-details.component';
-
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    RegisterComponent,
-    PlayerComponent,
-    AuthFormComponent,
     NotifyComponent,
-    ToolbarComponent,
-    PlayerFormComponent,
-    ViewPlayerComponent,
-    EditPlayerComponent,
-    PlayerDetailsComponent
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,

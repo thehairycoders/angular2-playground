@@ -3,6 +3,7 @@ import { compose } from '@ngrx/core/compose';
 import { StoreModule, combineReducers } from '@ngrx/store';
 import { storeLogger } from 'ngrx-store-logger';
 import { EffectsModule } from '@ngrx/effects';
+import { localStorageSync } from 'ngrx-store-localstorage';
 
 import { AuthActions, NotifyActions, PlayerActions } from './actions';
 import { AuthEffects, NotifyEffects, PlayerEffects } from './effects';
@@ -22,11 +23,15 @@ export const actions = [
   PlayerActions
 ];
 
-export const composeStore = compose(storeLogger(), combineReducers)({
-  authState: fromAuth.default,
-  notifyState: fromNotify.default,
-  playerState: fromPlayer.default
-});
+export const composeStore = compose(
+  storeLogger(), 
+  localStorageSync(['authState']),
+  combineReducers)
+  ({
+    authState: fromAuth.default,
+    notifyState: fromNotify.default,
+    playerState: fromPlayer.default
+  });
 
 export function reducer(state: any, action: any) {
  return composeStore(state, action);

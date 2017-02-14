@@ -2,7 +2,7 @@ import { Component, OnInit, Output, Input, EventEmitter, ChangeDetectionStrategy
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { EmailValidators } from 'ng2-validators';
-import { IAuthCredentials } from '../../models/auth-credentials';
+import { IAuthCredentials } from '../../../../models/auth-credentials';
 
 @Component({
     selector: 'app-auth-form',

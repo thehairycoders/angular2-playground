@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 
-import { IAuthCredentials, LoginStatus } from '../../models';
-import { AuthActions } from '../../store/actions';
-import * as RootStore from '../../store';
-import { AuthState } from '../../store/reducers/auth';
+import { IAuthCredentials, LoginStatus } from '../../../models';
+import { AuthActions } from '../../../store/actions';
+import * as RootStore from '../../../store';
+import { AuthState } from '../../../store/reducers/auth';
 
 @Component({
   selector: 'app-register',
