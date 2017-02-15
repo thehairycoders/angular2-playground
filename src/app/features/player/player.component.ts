@@ -14,8 +14,14 @@ import { Observable } from 'rxjs';
 })
 export class PlayerComponent implements OnInit {
 
-  constructor( ) { }
+  constructor( 
+    private store: Store<RootStore.AppState>,
+    private playerActions: PlayerActions) { }
 
-  ngOnInit() {  }
+  ngOnInit() { 
+
+    this.store.dispatch(this.playerActions.getPlayer());
+
+   }
   
 }

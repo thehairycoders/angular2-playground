@@ -35,7 +35,7 @@ export class ViewPlayerComponent implements OnInit {
 
     });
 
-    this.store.dispatch(this.playerActions.getPlayer());
+    //this.store.dispatch(this.playerActions.getPlayer());
 
   }
 

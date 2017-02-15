@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { FirebaseObjectObservable } from 'angularfire2';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 
 import { PlayerActions } from '../../../store/actions';
@@ -24,7 +24,7 @@ export class EditPlayerComponent implements OnInit {
   constructor(
     private store: Store<RootStore.AppState>,
     private playerActions: PlayerActions,
-    private router: Router ) { }
+    private router: Router) { }
 
   ngOnInit() {
 
@@ -45,8 +45,6 @@ export class EditPlayerComponent implements OnInit {
       this.redirectOnUpdateSuccess(playerState.status);
 
     });
-
-    this.store.dispatch(this.playerActions.getPlayer());
 
   }
 
@@ -79,8 +77,8 @@ export class EditPlayerComponent implements OnInit {
   }
 
   private redirectOnUpdateSuccess(playerStatus: PlayerStateStatus): void {
-    
-    if(playerStatus === PlayerStateStatus.updateSuccess) {
+
+    if (playerStatus === PlayerStateStatus.updateSuccess) {
       this.router.navigate(['../../player/details']);
     }
   }

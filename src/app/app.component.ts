@@ -26,9 +26,9 @@ export class AppComponent implements OnInit {
       this.loggedIn = authState.loginStatus === LoginStatus.loggedIn;
     });
 
-    this.router.events.subscribe(val => {
-      console.log(val);
-    });
+    // this.router.events.subscribe(val => {
+    //   console.log(val);
+    // });
 
   }
 
